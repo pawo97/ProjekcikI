@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="Syncfusion.SfDataGrid.XForms.UWP" version="1.0" primary="true">
+		<Qualifiers/>
+		<ResourceMapSubtree name="Files">
+			<ResourceMapSubtree name="Syncfusion.SfDataGrid.XForms.UWP">
+				<ResourceMapSubtree name="Assets">
+					<NamedResource name="DataGridFontIcon.ttf" uri="ms-resource://Syncfusion.SfDataGrid.XForms.UWP/Files/Syncfusion.SfDataGrid.XForms.UWP/Assets/DataGridFontIcon.ttf">
+						<Candidate type="Path">
+							<Value>Syncfusion.SfDataGrid.XForms.UWP\Assets\DataGridFontIcon.ttf</Value>
+						</Candidate>
+					</NamedResource>
+				</ResourceMapSubtree>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

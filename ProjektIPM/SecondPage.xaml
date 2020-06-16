@@ -1,0 +1,37 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjektIPM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    xmlns:Custom="using:Syncfusion.UI.Xaml.Controls.Input"
+    x:Class="ProjektIPM.SecondPage"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock x:Name="currentCurrency" HorizontalAlignment="Left" Margin="344,48,0,0" Text="TextBlock" FontSize="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="527" Height="67"/>
+        <StackPanel Orientation="Horizontal" Margin="165,48,977,81" >
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,0,0.2,0" Height="574">
+                <c:DataGrid x:Name="dataGridCurrency" HorizontalAlignment="Center" Margin="0,0,0,0" AutoGenerateColumns="False" Width="288" Height="461"/>
+            </ScrollViewer>
+        </StackPanel>
+        <Button Content="Pobierz" HorizontalAlignment="Left" Margin="48,195,0,0" VerticalAlignment="Top" Click="Button_Click" Width="100"/>
+        <TextBox HorizontalAlignment="Left" Text="{x:Bind Mode=TwoWay, Path=viewModel2.FirstDate}" Margin="49,248,0,0" VerticalAlignment="Top" Width="99"/>
+        <TextBox HorizontalAlignment="Left" Text="{x:Bind Mode=TwoWay, Path=viewModel2.SecondDate}" Margin="49,305,0,0" VerticalAlignment="Top" Width="99"/>
+        <Charting:Chart x:Name="LineChart" Margin="528,129,188,129" >
+            <Charting:LineSeries Title="Przebieg kursu" IndependentValuePath="FirstName" DependentValuePath="LastName" IsSelectionEnabled="True" Margin="10,-24,0.2,23.8"/>
+        </Charting:Chart>
+        <CommandBar>
+            <CommandBar.Content>
+                <Button x:Name="BackButton" Click="BackButton_Click" Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top"/>
+            </CommandBar.Content>
+            <AppBarButton x:Name="ExitButton" Click="ExitButton_Click" Icon="Forward" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+        </CommandBar>
+        <Button Content="Zapisz Wykres" HorizontalAlignment="Left" Margin="32,362,0,0" VerticalAlignment="Top" Width="133" Height="37" Click="Button_Click_1"/>
+        <ProgressBar HorizontalAlignment="Left" Height="20" Margin="48,94,0,0" VerticalAlignment="Top" Width="100" Maximum="{x:Bind Mode=TwoWay, Path=viewModel2.Finish}" Minimum="{x:Bind Mode=TwoWay, Path=viewModel2.Start}" Value="{x:Bind Mode=TwoWay, Path=viewModel2.Progress}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="50,68,0,0" Text="{x:Bind Mode=TwoWay, Path=viewModel2.Status}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
